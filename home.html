@@ -84,11 +84,12 @@
                 
                 <div><a href="contact_us.html">Contact&nbsp;Us</a></div>
                 
-                <div class="bar" onclick="drop()">
+                <div class="bar" id="bar" onclick="drop()">
                     <div class="ibar"></div>
                     <div class="ibar"></div>
                     <div class="ibar"></div>
                 </div>
+                <div class="cross" id="hiddenCross" onclick="drop()">&times;</div>
             
             </nav>
         
@@ -96,6 +97,13 @@
         
         <!-------------------Loader---------------------->
         <div id="loader"></div>
+        
+        <div id="sideNav">
+            <h1>Menu</h1>
+            <a href="home.html">Home</a>
+            <a href="our_services.html">Our&nbsp;Services</a>
+            <a href="contact_us.html">Contact&nbsp;Us</a> 
+        </div>
         
         <!-------------------Main content Container------------------>
         <div id="container" class="animateBottom">
