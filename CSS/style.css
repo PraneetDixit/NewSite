@@ -62,8 +62,6 @@ nav {
     left:50%;
     top:50%;
     z-index: 1;
-    width: 150px;
-    height: 150px;
     margin: -75px 0 0 -75px;
     border: 16px solid #f3f3f3;
     border-radius: 50%;
@@ -96,15 +94,16 @@ nav {
 }
 
 .mainFrame {
-    height: 580px;
+    height: calc(100vh - 80px);
     background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5) ), url(../Images/homeImage.jpg);
-    opacity: 2;
+    opacity: 1;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-/*    position: relative;*/
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
 }
 
 #termiteImage{
@@ -128,8 +127,6 @@ nav {
     text-align: center;
     font-family: 'Roboto', cursive;
     font-size: 50px;
-    position: relative;
-    top: 40%;
     font-weight: bold;
     width: fit-content;
     height: fit-content;
@@ -215,7 +212,12 @@ footer {
     margin: 0px;
     background-color: #f1f3f3;
     height: 8vw;
-/*    box-shadow: 0 0 5px 0.1px;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    vertical-align: middle;
 }
  .greyBlockBackground h1, a{
 
@@ -224,11 +226,8 @@ footer {
      margin-top: 0;
      margin-bottom: 0;
      color: black;
-/*     width: 250px;*/
      margin: 0 auto;
-     padding-top: 15px;
      text-align: center;
-/*     display: block;*/
 }
 
 .blueBlockBackground {
@@ -590,6 +589,47 @@ input[type=number] {
     border-radius: 5px;
 }
 
+.cross{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    font-size: 70px;
+    color: gray;
+    cursor: pointer
+}
+
+#sideNav{
+    width: 100vw;
+    height: calc(100vh - 80px);
+    background-color: white;
+    position: fixed;
+    top: 80px;
+    left: -110%;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transition: 1s;
+    align-items: center;
+}
+
+#sideNav a {
+    color: greenyellow;
+    font-size: 10vw;
+    font-weight: 500;
+    font-family: cursive;
+}
+
+#sideNav h1 {
+    width: fit-content;
+    font-size: 10vw;
+    font-weight: 500;
+    font-family: cursive;
+    border-bottom: 5px solid #8b0000;
+    margin: -5px 0px;
+}
+
 
 @media only screen and (max-width: 930px){
     #image {
@@ -629,20 +669,24 @@ input[type=number] {
     }
     
     nav div.bar {
-        display: inline-flex;
+        display: flex;
         transition: 1s;
         cursor: pointer;
         justify-content: space-between;
         flex-direction: column;
         height: 100%;
-        font-size: 70px;
         color: gray;
     }
     
     .ibar {
+        display: inline-flex;
         width: 40px;
         height: 5px;
         background-color: black;
         border-radius: 31%;
+    }
+    
+    .onPhoto{
+        font-size: 8vw;
     }
 }
