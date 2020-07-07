@@ -31,19 +31,6 @@ function goToTop(){
     document.documentElement.scrollTop = 0;
 }
 
-//let card = document.getElementsByClassName("card");
-//
-//for (let i = 0; i < card.length; i++) {
-//  card[i].addEventListener("click", redirect);
-//}
-//
-//function redirect() {
-//  document.write("You have clicked an element");
-//}
-
-var hight = window.screen.height-80;
-document.getElementById("mainFrame").style.height = height;
-
 function openTab(tabName, e) {
   
   var tabs = document.getElementsByClassName("tabcontent");
@@ -62,7 +49,7 @@ function openTab(tabName, e) {
        tablinks[j].className = tablinks[j].className.replace(" active", "");
        tablinks[j].className = tablinks[j].className.replace(" activi", "");
        tablinks[j].className = tablinks[j].className.replace(" activo", "");
- }
+   }
   
     var curTarget = e.currentTarget
     if (curTarget.id == "red"){
@@ -136,7 +123,16 @@ function validate(e) {
 }
 
 function drop(){
-    var bar = document.querySelector(".bar");
-    bar.innerHTML = "&times;";
-    bar.classList.toggle("cross");
+    let bars = document.querySelector("div.bar");
+    let cross = document.querySelector("div.cross");
+    let sideNav = document.getElementById("sideNav")
+    if (window.getComputedStyle(cross).display == "none"){
+        bars.style.display = "none";
+        cross.style.display = "flex";
+        sideNav.style.left = "0px";
+    }else{
+        bars.style.display = "flex";
+        cross.style.display = "none";
+        sideNav.style.left = "-110%";
+    }
 }
